@@ -43,7 +43,7 @@
 最重要的是，这是个有价值的项目，能服务于国内外许多游戏王爱好者。**
 
 对此项目开发感兴趣的同仁，可以通过邮箱：linuxgnulover@gmail.com 联系我，
-或者加入QQ群进行交流：![游戏王ygo交流](./assets/ygo_qq.png)
+或者加入QQ群进行交流：<img src="./assets/ygo_qq.png" width=300 high=300>
 
 ## LICENSE
                     GNU GENERAL PUBLIC LICENSE
