@@ -47,7 +47,7 @@
 
 此外，我们非常希望得到YGOPro单机版开发者们，特别是YGOPro服务端[srvpro](https://github.com/mycard/srvpro)和[ygopro](https://github.com/mycard/ygopro/tree/server)
 还有移动端[ygomobile](https://github.com/mycard/ygomobile)开发者们的帮助，
-但由于目前这个项目还只是一个太过初步的想法，因此不好意思打扰几位开发者们。
+但由于目前这个项目还只是一个太过初步的想法，因此不好意思主动去打扰几位开发者们。
 若开发者们有幸看到了这个repo，还请在空余时间通过上面的联系方式联系我们，十分感谢。
 
 ## LICENSE
