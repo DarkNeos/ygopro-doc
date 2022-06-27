@@ -56,7 +56,7 @@ curl ifconfig.me
   - `docker pull git-registry.mycard.moe/mycard/srvpro:lite`
 - 第三步：运行docker容器，并完成端口映射
   - 如何运行docker容器和什么是端口映射可以参考[docker菜鸟教程](https://www.runoob.com/docker/docker-container-usage.html)
-  - 下图将docker内的`7911`端口映射到了本机的`8080`端口：<img src="../../assets/docker-port-map.png">
+  - 下图将docker内的`7911`端口映射到了本机的`8080`端口：<img src="../../assets/docker-port-map.png" width=600 high=600>
 
 完成以上三步后即可在ygopro客户端上连接ygopro服务端了，ip地址为本机ip地址，端口为映射后的本机端口（`8080`）。
   
