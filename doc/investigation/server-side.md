@@ -133,43 +133,9 @@ ygopro客户端与服务端通过非http协议进行通信。
 每个`proto`对应的含义和使用场景：TODO。
 
 ## 代码导读
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
- 
+- 处理网络连接：[ygopro-server.js](https://github.com/mycard/srvpro/blob/master/ygopro-server.js)中的`netRequestHandler`函数；
+- CTOS/STOC协议解析：[YGOProMessages.ts](https://github.com/mycard/srvpro/blob/master/YGOProMessages.ts)中的`handleBuffer`函数；
+- `ygopro`的主函数入口点：[gframe.cpp](https://github.com/mycard/ygopro/blob/server/gframe/gframe.cpp)；
+- `ygopro`处理CTOS数据包：[netserver.cpp](https://github.com/mycard/ygopro/blob/server/gframe/netserver.cpp)中的`NetServer::HandleCTOSPacket`函数；
+- `ygopro`中和数据协议相关的结构体或宏定义：[network.h](https://github.com/mycard/ygopro/blob/server/gframe/network.h)。
+
