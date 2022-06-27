@@ -61,5 +61,115 @@ curl ifconfig.me
 完成以上三步后即可在ygopro客户端上连接ygopro服务端了，ip地址为本机ip地址，端口为映射后的本机端口（`8080`）。
   
 ## 数据协议
+ygopro客户端与服务端通过非http协议进行通信。
+
+数据包格式如下（参考[网页](https://www.icode9.com/content-1-1341344.html)）：
+```
+ 16bit packet_len     8bit proto          exdata_len  exdata
++------------------+---------------+-------------------------+
+				   |-              data					    -|
+
+其中第一部分为packet_len,长度2个字节,数值是 exdata_len + 1,即后面内容的长度总和
+第二部分是 proto,长度1个字节, 表示后面 exdata 的类型
+第三部分是 exdata,一些特定的proto会附带这部分内容,长度不定.上面提到的core传出来的buffer在这部分中
+
+后面两部分统称为data
+
+这个packet的最终长度是packet_len+2.
+服务器和客户端处理packet之前跳过了前2个字节.
+```
+
+其中`proto`的10进制代码和字符串描述如下：
+```json
+"CTOS": {
+    "1": "RESPONSE",
+    "2": "UPDATE_DECK",
+    "3": "HAND_RESULT",
+    "4": "TP_RESULT",
+    "16": "PLAYER_INFO",
+    "17": "CREATE_GAME",
+    "18": "JOIN_GAME",
+    "19": "LEAVE_GAME",
+    "20": "SURRENDER",
+    "21": "TIME_CONFIRM",
+    "22": "CHAT",
+    "32": "HS_TODUELIST",
+    "33": "HS_TOOBSERVER",
+    "34": "HS_READY",
+    "35": "HS_NOTREADY",
+    "36": "HS_KICK",
+    "37": "HS_START",
+    "48": "REQUEST_FIELD"
+},
+"STOC": {
+    "1": "GAME_MSG",
+    "2": "ERROR_MSG",
+    "3": "SELECT_HAND",
+    "4": "SELECT_TP",
+    "5": "HAND_RESULT",
+    "6": "TP_RESULT",
+    "7": "CHANGE_SIDE",
+    "8": "WAITING_SIDE",
+    "9": "DECK_COUNT",
+    "17": "CREATE_GAME",
+    "18": "JOIN_GAME",
+    "19": "TYPE_CHANGE",
+    "20": "LEAVE_GAME",
+    "21": "DUEL_START",
+    "22": "DUEL_END",
+    "23": "REPLAY",
+    "24": "TIME_LIMIT",
+    "25": "CHAT",
+    "32": "HS_PLAYER_ENTER",
+    "33": "HS_PLAYER_CHANGE",
+    "34": "HS_WATCH_CHANGE",
+    "48": "FIELD_FINISH"
+}
+```
+其中`CTOS`表示客户端到服务端协议，`STOC`表示服务端到客户端协议。
+
+详细可以参考[constants.json](https://github.com/mycard/srvpro/blob/master/data/constants.json)。
+
+每个`proto`对应的含义和使用场景：TODO。
 
 ## 代码导读
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+ 
