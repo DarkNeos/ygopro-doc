@@ -130,7 +130,79 @@ ygopro客户端与服务端通过非http协议进行通信。
 
 详细可以参考[constants.json](https://github.com/mycard/srvpro/blob/master/data/constants.json)。
 
-每个`proto`对应的含义和使用场景：TODO。
+每个`proto`对应的含义和使用场景：
+
+### CTOS_RESPONSE
+
+1 个 int32 数值，代表客户端对服务端询问消息的回复。
+
+### CTOS_UPDATE_DECK
+
+打勾和更换副卡组提交的卡组。
+
+- int32: 主卡组数量 m
+- int32: 副卡组数量 s
+- int32: 主卡组卡片 1
+- int32: 主卡组卡片 2
+...
+- int32: 主卡组卡片 m
+- int32: 副卡组卡片 1
+- int32: 副卡组卡片 2
+...
+- int32: 副卡组卡片 s
+
+### CTOS_HAND_RESULT
+
+猜拳的选择。
+
+```cpp
+struct CTOS_HandResult {
+	unsigned char res; // 0 剪刀 1 石头 2 布
+};
+```
+
+### CTOS_TP_RESULT
+
+```cpp
+struct CTOS_TPResult {
+	unsigned char res; // 1 先攻 0 后攻
+};
+```
+
+### CTOS_PLAYER_INFO
+
+加入服务器的第一个包，用于指定自己的用户名。
+
+```cpp
+struct CTOS_PlayerInfo {
+	unsigned short name[20]; // 用户名
+};
+```
+
+### CTOS_CREATE_GAME
+
+不涉及联机。
+
+### CTOS_JOIN_GAME
+
+和 CTOS_PLAYER_INFO 一起发送的加入服务器的包。
+
+```cpp
+struct CTOS_JoinGame {
+	unsigned short version; // YGOPro 版本号
+	unsigned int gameid; // 固定为 0
+	unsigned short pass[20]; // 房间密码信息
+};
+```
+
+### CTOS_LEAVE_GAME
+
+自己退出游戏发送的包。无数据。
+
+### CTOS_SURRENDER
+
+投降发送的包。无数据。
+
 
 ## 代码导读
 - 处理网络连接：[ygopro-server.js](https://github.com/mycard/srvpro/blob/master/ygopro-server.js)中的`netRequestHandler`函数；
