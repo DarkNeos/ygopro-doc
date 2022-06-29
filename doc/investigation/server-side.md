@@ -136,7 +136,7 @@ ygopro客户端与服务端通过非http协议进行通信。
 
 1 个 int32 数值，代表客户端对服务端询问消息的回复。
 
-### CTOS_RESPONSE
+### CTOS_UPDATE_DECK
 
 打勾和更换副卡组提交的卡组。
 
