@@ -26,6 +26,7 @@
 目前本人在阅读YGOPro服务端的源码，尝试将YGOPro客户端和服务端数据交互的协议扒出来。
 
 - YGOPro服务端代码：[srvpro](https://github.com/mycard/srvpro)，[ygopro](https://github.com/mycard/ygopro/tree/server)；
+  - 一些玩家重写的服务端实现：[YGOSalvation-Server](https://github.com/SalvationDevelopment/YGOSalvation-Server)，[Multirole](https://github.com/DyXel/Multirole)。
 - YGOPro安卓端代码：[ygomobile](https://github.com/mycard/ygomobile)。
 
 预计在7月底之前会完成YGOPro的详细调研，产出架构文档，接口文档。
@@ -33,7 +34,7 @@
 后续计划：
 - 调研技术框架[babylon.js](https://www.babylonjs.com/)和[react](https://reactjs.org/)；
 - 基于[react](https://reactjs.org/)编写小型Demo，确认基础功能的实现可行和接口功能的正确理解；
-- 设计整体的软件架构，包括游戏对局和用户系统，包括前端和后端；
+- 设计整体的软件架构，包括游戏对局和用户系统，包括前端和后端（可能是代理服务器）；
 - 代码开撸。
 
 ## 文档
