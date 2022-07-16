@@ -19,6 +19,8 @@
 场上位置LOCATION：
 TODO
 
+POSITION:
+
 ## MSG_RETRY
 有出错，对局重开。
 
@@ -165,3 +167,301 @@ TODO：具体含义。
 |字段|位数|含义|
 |---|---|---|
 |chain_link|8|todo|
+
+## MSG_CARD_SELECTED
+卡片被选择？
+
+|字段|位数|含义|
+|player|8|玩家编号|
+|count|8|todo|
+
+## MSG_RANDOM_SELECTED
+
+|字段|位数|含义|
+|player|8|玩家编号|
+|count|8|todo|
+|selections|8 x 4 x count|todo|
+
+## MSG_BECOME_TARGET
+|字段|位数|含义|
+|count|8|todo|
+|selections|8 x 4 x count|todo|
+
+## MSG_PAY_LPCOST
+支付生命值？
+
+|字段|位数|含义|
+|---|---|---|
+|player|8|玩家编号|
+|lp|32|需要支付的生命值数值？|
+|multiplier|8?|todo|
+
+## MSG_DAMAGE
+收到伤害？
+
+|字段|位数|含义|
+|---|---|---|
+|player|8|玩家编号|
+|lp|32|收到的伤害数值？|
+|multiplier|8?|todo|
+
+## MSG_RECOVER
+回复生命值？
+
+|字段|位数|含义|
+|---|---|---|
+|player|8|玩家编号|
+|lp|32|回复的数值？|
+|multiplier|8?|todo|
+
+## MSG_LPUPDATE
+更新生命值？
+
+|字段|位数|含义|
+|---|---|---|
+|player|8|玩家编号|
+|lp|32|todo|
+|multiplier|8?|todo|
+
+## MSG_SUMMONING
+召唤。
+
+|字段|位数|含义|
+|---|---|---|
+|id|32|卡的id?|
+|player|8|玩家编号|
+|location|8|召唤的位置编号|
+|index|8|todo|
+|position|8|todo|
+
+## MSG_EQUIP
+装备？
+
+|字段|位数|含义|
+|---|---|---|
+|c1|8|todo|
+|l1|8|todo|
+|s1|8|todo|
+|padding?|8|todo|
+|c2|8|todo|
+|l2|8|todo|
+|s2|8|todo|
+|padding?|8|todo|
+
+## MSG_UNEQUIP
+
+|字段|位数|含义|
+|---|---|---|
+|c1|8|todo|
+|l1|8|todo|
+|s1|8|todo|
+|padding?|8|todo|
+|c2|8|todo|
+|l2|8|todo|
+|s2|8|todo|
+|pending?|8|todo|
+
+## MSG_CARD_TARGET
+
+|字段|位数|含义|
+|---|---|---|
+|c1|8|todo|
+|l1|8|todo|
+|s1|8|todo|
+|padding?|8|todo|
+|c2|8|todo|
+|l2|8|todo|
+|s2|8|todo|
+|padding?|8|todo|
+
+## MSG_CANCEL_TARGET
+
+|字段|位数|含义|
+|---|---|---|
+|c1|8|todo|
+|l1|8|todo|
+|s1|8|todo|
+|padding?|8|todo|
+|c2|8|todo|
+|l2|8|todo|
+|s2|8|todo|
+|padding?|8|todo|
+
+## MSG_ADD_COUNTER
+
+|字段|位数|含义|
+|---|---|---|
+|type|16|todo|
+|player|8|玩家编号|
+|location|8|位置编号|
+|index|8|todo|
+|count|8|todo|
+
+## MSG_REMOVE_COUNTER
+
+|字段|位数|含义|
+|---|---|---|
+|type|16|todo|
+|player|8|玩家编号|
+|location|8|位置编号|
+|index|8|todo|
+|count|8|todo|
+
+## MSG_ATTACK
+攻击。
+
+|字段|位数|含义|
+|---|---|---|
+|attacker.player|8|攻击方的玩家编号|
+|attacker.location|8|攻击方的位置编号|
+|attacker.index|8|todo|
+|padding?|8|todo|
+|defender.player|8|防御方的玩家编号|
+|defender.location|8|防御方的位置编号|
+|defender.index|8|todo|
+|padding?|8|todo|
+
+## MSG_BATTLE
+战斗。
+
+|字段|位数|含义|
+|---|---|---|
+|ca|8|todo|
+|la|8|todo|
+|sa|8|todo|
+|padding?|8|todo|
+|aatk|32|todo|
+|adef|32|todo|
+|da|8|todo|
+|cd|8|todo|
+|ld|8|todo|
+|sd|8|todo|
+|padding|8|todo|
+|datk|32|todo|
+|ddef|32|todo|
+|dd|8|todo|
+
+## MSG_MISSED_EFFECT
+
+|字段|位数|含义|
+|---|---|---|
+|padding|8|todo|
+|id|32|todo|
+
+## MSG_TOSS_DICE
+
+|字段|位数|含义|
+|---|---|---|
+|player|8|玩家编号|
+|count|8|todo|
+|results|8 x count|todo|
+
+## MSG_ROCK_PAPER_SCISSORS
+
+|字段|位数|含义|
+|---|---|---|
+|player|8|玩家编号|
+
+## MSG_HAND_RES
+
+|字段|位数|含义|
+|---|---|---|
+|res|8|猜拳结果？|
+
+## MSG_TOSS_COIN
+
+|字段|位数|含义|
+|---|---|---|
+|player|8|玩家编号|
+|count|8|todo|
+|results|8 x count|todo|
+
+## MSG_ANNOUNCE_RACE
+宣言种族？
+
+|字段|位数|含义|
+|---|---|---|
+|player|8|玩家编号|
+|announce_count|8|todo|
+|avaliable|32|todo|
+|options|todo|todo|
+
+## MSG_ANNOUNCE_CARD
+宣言卡名？
+
+|字段|位数|含义|
+|---|---|---|
+|player|8|玩家编号|
+|declarable_type|32|todo|
+
+## MSG_ANNOUNCE_NUMBER
+宣言一个数字？
+
+|字段|位数|含义|
+|---|---|---|
+|player|8|玩家编号|
+|announce_count|8|todo|
+|values|32 x announce_count|todo|
+
+## MSG_ANNOUNCE_CARD_FILTER
+
+|字段|位数|含义|
+|---|---|---|
+|player|8|玩家编号|
+|count|8|todo|
+|opcodes|32 x count|todo|
+
+## MSG_CARD_HINT
+
+|字段|位数|含义|
+|---|---|---|
+|controller|8|todo|
+|location|8|todo|
+|sequence|8|todo|
+|padding|8|todo|
+|chtype|8|todo|
+|value|32|todo|
+
+## MSG_PLAYER_HINT
+
+|字段|位数|含义|
+|---|---|---|
+|player|8|玩家编号|
+|chtype|8|todo|
+|value|32|todo|
+
+## MSG_MATCH_KILL
+
+|字段|位数|含义|
+|---|---|---|
+|match_kill|32|todo|
+
+## MSG_SELECT_IDLECMD
+
+|字段|位数|含义|
+|---|---|---|
+|player|8|玩家编号|
+|summonable_cards|todo|todo|
+|spsummonable_cards|todo|todo|
+|repositionable_cards|todo|todo|
+|msetable_cards|todo|todo|
+|ssetable_cards|todo|todo|
+|activatable_cards|todo|todo|
+|enableBattlePhase|8|todo|
+|enableBatlePhase|8|todo|
+|shufflecount|8|todo|
+
+## MSG_MOVE
+
+|字段|位数|含义|
+|---|---|---|
+|id|32|todo|
+|previousController|8|todo|
+|pl(previousLocation)|8|todo|
+|previousIndex|8|todo|
+|overlayindex|8|todo|
+|currentController|8|todo|
+|cl(currentLocation)|8|todo|
+|currentIndex|8|todo|
+|currentPosition|8|todo|
+|r(reason)|32|todo|
