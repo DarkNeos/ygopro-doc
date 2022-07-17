@@ -231,18 +231,21 @@ TODO
 卡片被选择？
 
 |字段|位数|含义|
+|---|---|---|
 |player|8|玩家编号|
 |count|8|todo|
 
 ## MSG_RANDOM_SELECTED
 
 |字段|位数|含义|
+|---|---|---|
 |player|8|玩家编号|
 |count|8|todo|
 |selections|8 x 4 x count|todo|
 
 ## MSG_BECOME_TARGET
 |字段|位数|含义|
+|---|---|---|
 |count|8|todo|
 |selections|8 x 4 x count|被选择的对象|
 
