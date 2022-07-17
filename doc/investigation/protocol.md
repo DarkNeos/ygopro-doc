@@ -189,7 +189,7 @@ TODO
 |id|32|连锁id?|
 |player|8|玩家编号|
 |location|8|产生连锁卡位置的编号|
-|sequence|8|连锁序列？|
+|sequence|8|位置序列|
 |position|8|表示状态编号|
 
 ## MSG_CHAINED
@@ -289,7 +289,7 @@ TODO
 |code|32|卡的code|
 |player|8|玩家编号|
 |location|8|召唤的位置编号|
-|sequence|8|todo|
+|sequence|8|位置序列|
 
 ## MSG_EQUIP
 装备？
@@ -298,11 +298,11 @@ TODO
 |---|---|---|
 |from.player|8|玩家编号|
 |from.location|8|位置编号|
-|from.sequence|8|todo|
+|from.sequence|8|位置序列|
 |from.position|8|表示状态编号|
 |to.player|8|玩家编号|
 |to.location|8|位置编号|
-|to.sequence|8|todo|
+|to.sequence|8|位置序列|
 |to.position|8|表示状态编号|
 
 ## MSG_UNEQUIP
@@ -311,11 +311,11 @@ TODO
 |---|---|---|
 |from.player|8|玩家编号|
 |from.location|8|位置编号|
-|from.sequence|8|todo|
+|from.sequence|8|位置序列|
 |from.position|8|表示状态编号|
 |to.player|8|玩家编号|
 |to.location|8|位置编号|
-|to.sequence|8|todo|
+|to.sequence|8|位置序列|
 |to.position|8|表示状态编号|
 
 ## MSG_CARD_TARGET
@@ -338,7 +338,7 @@ TODO
 |type|16|指示物类型？|
 |player|8|玩家编号|
 |location|8|位置编号|
-|sequence|8|todo|
+|sequence|8|位置序列|
 |count|16|增加指示物的数量|
 
 ## MSG_REMOVE_COUNTER
@@ -349,7 +349,7 @@ TODO
 |type|16|指示物类型？|
 |player|8|玩家编号|
 |location|8|位置编号|
-|index|8|todo|
+|sequence|8|位置序列|
 |count|8|减少指示物的数量|
 
 ## MSG_ATTACK
@@ -359,11 +359,11 @@ TODO
 |---|---|---|
 |attacker.player|8|攻击方的玩家编号|
 |attacker.location|8|攻击方的位置编号|
-|attacker.sequence|8|todo|
+|attacker.sequence|8|位置序列|
 |attacker.position|8|攻击方的表示状态编号|
 |defender.player|8|防御方的玩家编号|
 |defender.location|8|防御方的位置编号|
-|defender.sequence|8|todo|
+|defender.sequence|8|位置序列|
 |defender.position|8|防御方的表示状态编号|
 
 ## MSG_BATTLE
@@ -373,14 +373,14 @@ TODO
 |---|---|---|
 |attacker.player|8|攻击方的玩家编号|
 |attacker.location|8|攻击方的位置编号|
-|attacker.sequence|8|todo|
+|attacker.sequence|8|攻击方的位置序列|
 |attacker.position|8|攻击方的表示状态编号|
 |aatk|32|攻击方在战斗阶段的攻击力|
 |adef|32|攻击方在战斗阶段的防御力|
 |padding|8|todo|
 |defender.player|8|防御方的玩家编号|
 |defender.location|8|防御方的位置编号|
-|defender.sequence|8|todo|
+|defender.sequence|8|防御方的位置序列|
 |defender.position|8|防御方的表示状态编号|
 |datk|32|防御方在战斗阶段的攻击力|
 |ddef|32|防御方在战斗阶段的攻击力|
@@ -467,7 +467,7 @@ TODO
 |---|---|---|
 |card.player|8|玩家编号|
 |card.location|8|位置编号|
-|card.sequence|8|todo|
+|card.sequence|8|位置序列|
 |card.position|8|表示状态编号|
 |chtype|8|类型|
 |value|32|todo|
@@ -524,10 +524,110 @@ TODO
 |code|32|移动卡的code|
 |from.player|8|原始玩家编号|
 |from.location|8|原始位置编号|
-|from.sequence|8|todo|
+|from.sequence|8|原始位置序列|
 |from.position|8|原始表示状态|
 |to.player|8|当前玩家编号|
 |to.location|8|当前位置编号|
-|to.sequence|8|todo|
+|to.sequence|8|当前位置序列|
 |tp.position|8|当前表示状态|
 |reason|32|todo|
+
+## MSG_RELOAD_FIELD
+
+|字段|位数|含义|
+|---|---|---|
+|master_rule|8|大师规则|
+|player0.life|32|玩家一的初始生命值|
+|player0.MonserZone|todo|玩家一的怪兽区域|
+|player0.SpellZone|todo|玩家一的魔法区域|
+|player0.Deck|todo|玩家一的卡组|
+|player0.Hand|todo|玩家一的手牌|
+|player0.Grave|todo|玩家一的墓地|
+|player0.Removed|todo|玩家一的除外|
+|player0.Extra|todo|玩家一的额外卡组|
+|player1.life|32|玩家二的初始生命值|
+|player1.MonserZone|todo|玩家二的怪兽区域|
+|player1.SpellZone|todo|玩家二的魔法区域|
+|player1.Deck|todo|玩家二的卡组|
+|player1.Hand|todo|玩家二的手牌|
+|player1.Grave|todo|玩家二的墓地|
+|player1.Removed|todo|玩家二的除外|
+|player1.Extra|todo|玩家二的额外卡组|
+
+## MSG_UPDATE_DATA
+TODO
+
+## MSG_UPDATE_CARD
+TODO
+
+## MSG_POS_CHANGE
+
+|字段|位数|含义|
+|---|---|---|
+|code|32|卡的code|
+|from.player|8|玩家编号|
+|from.location|8|位置编号|
+|from.sequence|8|位置序列|
+|from.position|8|表示状态编号|
+|to.position|8|更改后的表示状态编号|
+
+## MSG_SET
+
+|字段|位数|含义|
+|---|---|---|
+|code|32|卡的code|
+|player|8|玩家编号|
+|location|8|位置编号|
+|sequence|8|位置序列|
+|position|8|表示状态编号|
+
+## MSG_SWAP
+
+|字段|位数|含义|
+|---|---|---|
+|from.code|32|卡组码|
+|from.player|8|玩家编号|
+|from.location|8|位置编号|
+|from.sequence|8|位置序列|
+|from.position|8|表示状态编号|
+|to.code|32|卡的code|
+|to.player|8|玩家编号|
+|to.location|8|位置编号|
+|to.sequence|8|位置序列|
+|to.position|8|表示状态编号|
+
+## MSG_FLIP_SUMMONING
+
+|字段|位数|含义|
+|---|---|---|
+|code|32|卡组码|
+|player|8|玩家编号|
+|location|8|位置编号|
+|sequence|8|位置序列|
+|position|8|表示状态编号|
+
+## MSG_SELECT_BATTLECMD
+
+|字段|位数|含义|
+|---|---|---|
+|player|8|玩家编号|
+|activatable_cards|todo|能发动效果的卡|
+|attackable_cards|todo|能发动攻击的卡|
+|enable_main_phase2|8|是否能进入主要阶段二|
+|enable_end_phase|8|是否能进入结束阶段|
+
+## MSG_REQUEST_DECK
+unused
+
+## MSG_SELECT_EFFECTYN
+
+|字段|位数|含义|
+|---|---|---|
+|player|8|玩家编号|
+|code|32|卡组码|
+|controller|8|控制者编号|
+|location|8|位置编号|
+|sequence|8|位置序列|
+|position|8|表示状态编号|
+|cr|32|效果编号？|
+
