@@ -629,5 +629,102 @@ unused
 |location|8|位置编号|
 |sequence|8|位置序列|
 |position|8|表示状态编号|
-|cr|32|效果编号？|
+|desc|32|效果编号？|
 
+## MSG_SELECT_YES_NO
+
+|字段|位数|含义|
+|---|---|---|
+|player|8|玩家编号|
+|desc|32|效果编号|
+
+## MSG_SELECT_OPTION
+
+|字段|位数|含义|
+|---|---|---|
+|player|8|玩家编号|
+|count|8|选择个数|
+|descs|32 x count|效果编号列表？|
+
+## MSG_SELECT_TRIBUTE
+选择祭品。
+
+|字段|位数|含义|
+|---|---|---|
+|player|8|玩家编号|
+|cancalable|8|是否能取消|
+|min|8|最小祭品数量|
+|max|8|最大祭品数量|
+|count|8|可选择的祭品数量|
+|targets{code, player, location, sequence, para}|(32 + 8 + 8 + 8 + 8) x count|可选择的祭品数据|
+
+## MSG_SELECT_CARD
+
+|字段|位数|含义|
+|---|---|---|
+|player|8|玩家编号|
+|cancalable|8|是否能取消|
+|min|8|选择卡的最小数量|
+|max|8|选择卡的最大数量|
+|count|8|可选择卡的数量|
+|targets{code, player, location, sequence, position}|(32 + 8 + 8 + 8 + 8) x count|可选择的卡片数据|
+
+## MSG_SELECT_UNSELECT
+
+|字段|位数|含义|
+|---|---|---|
+|player|8|玩家编号|
+|finisable|8|todo|
+|cancalable|8|是否能取消|
+|min|8|最小值|
+|max|8|最大值|
+|count1|8|todo|
+|card1s{code, player, location, sequence, position}|(32 + 8 + 8 + 8 + 8) x count1|todo|
+|count2|8|todo|
+|card2s{code, player, location, sequence, position}|(32 + 8 + 8 + 8 + 8) x count2|todo|
+
+## MSG_SELECT_CHAIN
+
+|字段|位数|含义|
+|---|---|---|
+|player|8|玩家编号|
+|count|8|可以连锁的数量？|
+|spcount|8|关键卡的数量|
+|forced|8|强制发动的卡的数量|
+|hint0|32|todo|
+|hint1|32|todo|
+|select_options{flag, code, player, location, sequence, position, desc}|(8 + 32 + 8 + 8 + 8 + 8 + 32) x count|可连锁卡的数据|
+
+## MSG_SELECT_POSITION
+
+|字段|位数|含义|
+|---|---|---|
+|player|8|玩家编号|
+|code|32|卡组码|
+|position|8|表示状态|
+
+## MSG_SOFT_CARD
+
+|字段|位数|含义|
+|---|---|---|
+|player|8|玩家编号|
+|count|8|可选择的数量|
+|targets{code, player, location, sequence}|(32 + 8 + 8 + 8) x count|可选择卡的数据|
+
+## MSG_SOFT_CHAIN
+自排连锁。
+
+|字段|位数|含义|
+|---|---|---|
+|player|8|玩家编号|
+|count|8|可选择连锁的数量|
+|targets{code, player, location, sequence}|(32 + 8 + 8 + 8) x count|可选择连锁卡的数据|
+
+## MSG_SELECT_COUNTER
+TODO: 这个协议的格式需要和srvpro对齐。
+
+|字段|位数|含义|
+|---|---|---|
+|player|8|玩家编号|
+|count|8|可选择指示物的个数|
+|target{code, player, location, sequence}|(32 + 8 + 8 + 8) x count|可选择指示物的数据|
