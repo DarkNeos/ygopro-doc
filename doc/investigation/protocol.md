@@ -728,3 +728,77 @@ TODO: 这个协议的格式需要和srvpro对齐。
 |player|8|玩家编号|
 |count|8|可选择指示物的个数|
 |target{code, player, location, sequence}|(32 + 8 + 8 + 8) x count|可选择指示物的数据|
+
+## MSG_SELECT_SUM
+
+|字段|位数|含义|
+|---|---|---|
+|select_mode|8|选择类型|
+|player|8|玩家编号|
+|level|32|todo|
+|min|8|选择的最小值|
+|max|8|选择的最大值|
+|count1|8|必须选择的数量|
+|cards1{code, player, location, sequence, para}|(32 + 8 + 8 + 8 + 32) x count1|必须选择的卡集合|
+|count2|8|可选卡的数量|
+|cards2{code, player, location, sequence, para}|(32 + 8 + 8 + 8 + 32) x count2|可选的卡集合|
+
+## MSG_SELECT_PLACE
+
+|字段|位数|含义|
+|---|---|---|
+|player|8|玩家编号|
+|select_min|8|选择的最小值|
+|selectable_field|32|可选的区域|
+
+## MSG_SELECT_DISFIELD
+
+|字段|位数|含义|
+|---|---|---|
+|player|8|玩家编号|
+|min|8|选择的最小值|
+|selectable_field|32|可选的区域|
+
+## MSG_CONFIRM_DECKTOP
+
+|字段|位数|含义|
+|---|---|---|
+|player|8|玩家编号|
+|count|8|卡的数量|
+|cards{code, player, location, sequence}|(32 + 8 + 8 + 8) x count|卡的数据|
+
+## MSG_CONFIRM_CARDS
+
+|字段|位数|含义|
+|---|---|---|
+|player|8|玩家编号|
+|count|8|可选择的数量|
+|cards{code, player, location, sequence}|(32 + 8 + 8 + 8) x count|卡的数据|
+
+## MSG_REFRESH_DECK
+
+|字段|位数|含义|
+|---|---|---|
+|player|8|玩家编号|
+
+## MSG_SWAP_GRAVE_DECK
+（珠泪专用协议？）
+
+|字段|位数|含义|
+|---|---|---|
+|player|8|玩家编号|
+
+## MSG_SHUFFLE_SET_CARD
+
+|字段|位数|含义|
+|---|---|---|
+|location|8|位置编号|
+|count|8|卡的数量|
+|cards1{player, location, sequence, position}|(8 + 8 + 8 + 8) x count|todo|
+|cards2{player, location, sequence, position}|(8 + 8 + 8 + 8) x count|todo|
+
+## MSG_FIELD_DISABLED
+
+|字段|位数|含义|
+|---|---|---|
+|disabled_field|32|被禁用的区域？|
