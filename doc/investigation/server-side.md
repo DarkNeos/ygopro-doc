@@ -2,7 +2,7 @@
 
 ## 大致整体架构
 
-<img src="../../assets/ygopro-server.drawio.svg" width=300 high=300>
+<img src="../../assets/ygopro-arch.drawio.svg" width=300 high=300>
 
 ## 部署方法
 ### 云服务器部署
