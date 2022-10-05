@@ -1,4 +1,4 @@
-# ygopro.js
+# neos-ts
 《游戏王》对战平台[YGOPro](https://github.com/Fluorohydride/ygopro)的网页版。
 
 ## 开发动机
