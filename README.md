@@ -28,7 +28,7 @@
 - 用于参考的[ygopro2客户端](https://code.mycard.moe/mycard/YGOProUnity_V2)
 
 ## 后续计划：
-- 调研技术框架[babylon.js](https://www.babylonjs.com/)和[react](https://reactjs.org/)；
+- 调研技术框架[three.js](https://threejs.org/)和[react](https://reactjs.org/)；
 - 完成[代理服务](https://github.com/DarkNeos/ygopro-proxy)的基本框架实现，将ygopro的数据协议转成[protobuf](https://developers.google.com/protocol-buffers)格式；
 - 基于[react](https://reactjs.org/)编写小型Demo，确认基础功能的实现可行和数据协议的具体细节；
 - 设计整体的软件架构，包括游戏对局和用户系统，包括前端和后端；
