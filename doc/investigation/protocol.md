@@ -512,7 +512,7 @@ TODO
 |back_placeable.count|8|能后场放置数量|
 |back_placeable.card{code, player, location, sequence}|(32 + 8 x 3) x count|能后场放置的卡|
 |effect.count|8|能发动效果数量|
-|effect.card{code, player, location, sequence, descP}|(32 + 8 x 3) x count|能后场放置的卡|
+|effect.card{code, player, location, sequence, descP}|(32 + 8 x 3) x count|能发动效果的卡|
 |bp|8|能进入战斗阶段|
 |ep2|8|能结束回合|
 |shuffle|8|能洗切手牌|
